@@ -2,7 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
 
+const Settings = {
+  ERROR_COUNT: 3,
+};
+
 ReactDOM.render(
-    <App></App>,
+    <App errorCount={Settings.ERROR_COUNT}></App>,
     document.querySelector(`#root`)
 );
