@@ -14,12 +14,12 @@ const App = ({errorCount}) => {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" render={(props) => <WelcomeScreen errorCount={errorCount} {...props} />} />
-        <Route exact path='/dev-artist' component={ArtistQuestionScreen}></Route>
-        <Route exact path='/dev-genre' component={GenreQuestionScreen}></Route>
-        <Route exact path='/login' component={AuthScreen}></Route>
-        <Route exact path='/result' component={WinScreen}></Route>
-        <Route exact path='/lose' component={GameOverScreen}></Route>
-        <Route component={NotFound}></Route>
+        <Route exact path='/dev-artist' component={ArtistQuestionScreen} />
+        <Route exact path='/dev-genre' component={GenreQuestionScreen} />
+        <Route exact path='/login' component={AuthScreen} />
+        <Route exact path='/result' component={WinScreen} />
+        <Route exact path='/lose' component={GameOverScreen} />
+        <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
   );
