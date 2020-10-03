@@ -13,7 +13,7 @@ const App = ({errorCount}) => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" render={(props) => <WelcomeScreen errorCount={errorCount} {...props} />}></Route>
+        <Route exact path="/" render={(props) => <WelcomeScreen errorCount={errorCount} {...props} />} />
         <Route exact path='/dev-artist' component={ArtistQuestionScreen}></Route>
         <Route exact path='/dev-genre' component={GenreQuestionScreen}></Route>
         <Route exact path='/login' component={AuthScreen}></Route>
