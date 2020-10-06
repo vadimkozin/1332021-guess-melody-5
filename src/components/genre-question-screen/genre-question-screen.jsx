@@ -60,7 +60,13 @@ class GenreQuestionScreen extends React.PureComponent {
 
         <section className="game__screen">
           <h2 className="game__title">Выберите {genre} треки</h2>
-          <form className="game__tracks">
+          <form
+            className="game__tracks"
+            onSubmit={(evt) => {
+              evt.preventDefault();
+              onAnswer(question, this.state.answers);
+            }}
+          >
             {trackList}
             <button className="game__submit button" type="submit">Ответить</button>
           </form>
