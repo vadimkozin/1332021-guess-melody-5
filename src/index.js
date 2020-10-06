@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
-import {questions} from './mocks/questions';
+import questions from './mocks/questions';
 
 const Settings = {
   ERROR_COUNT: 3,
