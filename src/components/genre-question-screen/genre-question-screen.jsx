@@ -1,5 +1,5 @@
 import React from 'react';
-import {GenreQuestionType} from '../../types/types';
+import {GENRE_QUESTION_TYPE} from '../../types/types';
 
 class GenreQuestionScreen extends React.PureComponent {
   constructor(props) {
@@ -75,6 +75,6 @@ class GenreQuestionScreen extends React.PureComponent {
   }
 }
 
-GenreQuestionScreen.propTypes = GenreQuestionType;
+GenreQuestionScreen.propTypes = GENRE_QUESTION_TYPE;
 
 export default GenreQuestionScreen;

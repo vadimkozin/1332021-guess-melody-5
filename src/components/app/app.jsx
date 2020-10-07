@@ -8,7 +8,7 @@ import WinScreen from '../win-screen/win-screen';
 import WelcomeScreen from '../welcome-screen/welcome-screen';
 import NotFound from '../not-found/not-found';
 import GameScreen from "../game-screen/game-screen";
-import {AppType} from '../../types/types';
+import {APP_TYPE} from '../../types/types';
 
 const App = (props) => {
   const {errorsCount, questions} = props;
@@ -52,6 +52,6 @@ const App = (props) => {
   );
 };
 
-App.propTypes = AppType;
+App.propTypes = APP_TYPE;
 
 export default App;

@@ -3,17 +3,17 @@ import {GameType} from '../const';
 
 const QUESTION_TYPE = oneOf([GameType.ARTIST, GameType.GENRE]).isRequired;
 
-export const AppType = {
+export const APP_TYPE = {
   errorsCount: number.isRequired,
   questions: array.isRequired,
 };
 
-export const WelcomeType = {
+export const WELCOME_TYPE = {
   errorsCount: number.isRequired,
   onPlayButtonClick: func.isRequired,
 };
 
-export const ArtistQuestionType = {
+export const ARTIST_QUESTION_TYPE = {
   onAnswer: func.isRequired,
   question: shape({
     answers: arrayOf(shape({
@@ -28,7 +28,7 @@ export const ArtistQuestionType = {
   }).isRequired,
 };
 
-export const GenreQuestionType = {
+export const GENRE_QUESTION_TYPE = {
   onAnswer: func.isRequired,
   question: shape({
     answers: arrayOf(shape({
@@ -40,6 +40,6 @@ export const GenreQuestionType = {
   }).isRequired,
 };
 
-export const GameScreenType = {
+export const GAME_SCREEN_TYPE = {
   questions: array.isRequired,
 };
