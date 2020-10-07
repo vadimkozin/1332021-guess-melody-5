@@ -1,5 +1,5 @@
 import React from 'react';
-import {welcomeType} from '../../types/types';
+import {WelcomeType} from '../../types/types';
 
 const WelcomeScreen = (props) => {
   const {errorsCount, onPlayButtonClick} = props;
@@ -27,7 +27,7 @@ const WelcomeScreen = (props) => {
   );
 };
 
-WelcomeScreen.propTypes = welcomeType;
+WelcomeScreen.propTypes = WelcomeType;
 
 export default WelcomeScreen;
 

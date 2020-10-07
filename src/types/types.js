@@ -1,17 +1,19 @@
 import {shape, func, number, string, array, oneOf, arrayOf} from 'prop-types';
 import {GameType} from '../const';
 
-export const appType = {
+const QUESTION_TYPE = oneOf([GameType.ARTIST, GameType.GENRE]).isRequired;
+
+export const AppType = {
   errorsCount: number.isRequired,
   questions: array.isRequired,
 };
 
-export const welcomeType = {
+export const WelcomeType = {
   errorsCount: number.isRequired,
   onPlayButtonClick: func.isRequired,
 };
 
-export const artistQuestionType = {
+export const ArtistQuestionType = {
   onAnswer: func.isRequired,
   question: shape({
     answers: arrayOf(shape({
@@ -22,11 +24,11 @@ export const artistQuestionType = {
       artist: string.isRequired,
       src: string.isRequired,
     }).isRequired,
-    type: oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
+    type: QUESTION_TYPE,
   }).isRequired,
 };
 
-export const genreQuestionType = {
+export const GenreQuestionType = {
   onAnswer: func.isRequired,
   question: shape({
     answers: arrayOf(shape({
@@ -34,10 +36,10 @@ export const genreQuestionType = {
       genre: string.isRequired,
     })).isRequired,
     genre: string.isRequired,
-    type: oneOf([GameType.ARTIST, GameType.GENRE]).isRequired,
+    type: QUESTION_TYPE,
   }).isRequired,
 };
 
-export const gameType = {
+export const GameScreenType = {
   questions: array.isRequired,
 };

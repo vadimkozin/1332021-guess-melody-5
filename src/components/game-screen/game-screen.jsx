@@ -3,7 +3,7 @@ import {Redirect} from 'react-router-dom';
 import {GameType} from '../../const';
 import ArtistQuestionScreen from '../artist-question-screen/artist-question-screen';
 import GenreQuestionScreen from '../genre-question-screen/genre-question-screen';
-import {gameType} from '../../types/types';
+import {GameScreenType} from '../../types/types';
 
 class GameScreen extends PureComponent {
   constructor(props) {
@@ -55,6 +55,6 @@ class GameScreen extends PureComponent {
 
 }
 
-GameScreen.propTypes = gameType;
+GameScreen.propTypes = GameScreenType;
 
 export default GameScreen;
