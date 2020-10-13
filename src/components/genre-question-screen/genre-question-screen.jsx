@@ -18,10 +18,6 @@ class GenreQuestionScreen extends React.PureComponent {
 
     const trackList = answers.map((answer, i) => (
       <div key={`${i}-${answer.src}`} className="track">
-        {/* <button className="track__button track__button--play" type="button"></button>
-        <div className="track__status">
-          <audio src={answer.src}></audio>
-        </div> */}
         <AudioPlayer
           isPlaying={i === 0}
           src={answer.src}
