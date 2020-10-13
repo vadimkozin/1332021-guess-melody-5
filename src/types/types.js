@@ -1,4 +1,4 @@
-import {shape, func, number, string, array, oneOf, oneOfType, arrayOf} from 'prop-types';
+import {shape, func, number, string, array, oneOf, oneOfType, arrayOf, bool} from 'prop-types';
 import {GameType} from '../const';
 
 const QUESTION_TYPE = oneOf([GameType.ARTIST, GameType.GENRE]).isRequired;
@@ -74,4 +74,9 @@ export const APP_TYPE = {
 
 export const GAME_SCREEN_TYPE = {
   questions: array.isRequired,
+};
+
+export const AUDIO_PLAYER_TYPE = {
+  isPlaying: bool.isRequired,
+  src: string.isRequired,
 };
