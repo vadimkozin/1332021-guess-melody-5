@@ -53,7 +53,10 @@ export default class AudioPlayer extends PureComponent {
           className={`track__button track__button--${isPlaying ? `pause` : `play`}`}
           type="button"
           disabled={isLoading}
-          onClick={() => this.setState({isPlaying: !this.state.isPlaying})}
+          onClick={() => this.setState((prevState) => {
+            return {isPlaying: !prevState.isPlaying};
+          })}
+
         />
         <div className="track__status">
           <audio />
@@ -64,6 +67,6 @@ export default class AudioPlayer extends PureComponent {
 
 }
 
-
 AudioPlayer.propTypes = AUDIO_PLAYER_TYPE;
 
+// onClick={() => this.setState({isPlaying: !this.state.isPlaying})}
