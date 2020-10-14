@@ -29,13 +29,15 @@ export default class AudioPlayer extends PureComponent {
     audio.oncanplaythrough = null;
   }
 
-  componentDidUpdate() {
-    const audio = this._audioRef.current;
+  componentDidUpdate(prevProps) {
+    if (this.props.isPlaying !== prevProps.isPlaying) {
+      const audio = this._audioRef.current;
 
-    if (this.props.isPlaying) {
-      audio.play();
-    } else {
-      audio.pause();
+      if (this.props.isPlaying) {
+        audio.play();
+      } else {
+        audio.pause();
+      }
     }
   }
 
