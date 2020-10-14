@@ -1,4 +1,6 @@
-const AVATAR_URL = `https://api.adorable.io/avatars/128`;
+import {AvatarGenerator} from 'random-avatar-generator';
+
+const generator = new AvatarGenerator();
 
 export default [
   {
@@ -24,13 +26,13 @@ export default [
       src: `https://upload.wikimedia.org/wikipedia/commons/4/4e/BWV_543-fugue.ogg`,
     },
     answers: [{
-      picture: `${AVATAR_URL}/${Math.random()}`,
+      picture: generator.generateRandomAvatar(),
       artist: `John Snow`,
     }, {
-      picture: `${AVATAR_URL}/${Math.random()}`,
+      picture: generator.generateRandomAvatar(),
       artist: `Jack Daniels`,
     }, {
-      picture: `${AVATAR_URL}/${Math.random()}`,
+      picture: generator.generateRandomAvatar(),
       artist: `Jim Beam`,
     }],
   }

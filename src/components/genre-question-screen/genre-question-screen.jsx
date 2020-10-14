@@ -7,6 +7,7 @@ class GenreQuestionScreen extends React.PureComponent {
     super(props);
 
     this.state = {
+      activePlayer: 0,
       answers: [false, false, false, false],
     };
   }
@@ -14,13 +15,18 @@ class GenreQuestionScreen extends React.PureComponent {
   render() {
     const {onAnswer, question} = this.props;
     const {answers, genre} = question;
-    const {answers: userAnswers} = this.state;
+    const {answers: userAnswers, activePlayer} = this.state;
 
     const trackList = answers.map((answer, i) => (
       <div key={`${i}-${answer.src}`} className="track">
         <AudioPlayer
-          isPlaying={i === 0}
           src={answer.src}
+          isPlaying={i === activePlayer}
+          onPlayButtonClick={() => {
+            this.setState({
+              activePlayer: activePlayer === i ? -1 : i,
+            });
+          }}
         />
         <div className="game__answer">
           <input className="game__input visually-hidden" type="checkbox" name="answer"

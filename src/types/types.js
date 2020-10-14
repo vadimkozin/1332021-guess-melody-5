@@ -79,4 +79,5 @@ export const GAME_SCREEN_TYPE = {
 export const AUDIO_PLAYER_TYPE = {
   isPlaying: bool.isRequired,
   src: string.isRequired,
+  onPlayButtonClick: func.isRequired,
 };
