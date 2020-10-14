@@ -1,5 +1,5 @@
 import React from 'react';
-import {GENRE_QUESTION_TYPE} from '../../types/types';
+import {GENRE_QUESTION_SCREEN_TYPE} from '../../types/types';
 
 class GenreQuestionScreen extends React.PureComponent {
   constructor(props) {
@@ -11,16 +11,13 @@ class GenreQuestionScreen extends React.PureComponent {
   }
 
   render() {
-    const {onAnswer, question} = this.props;
+    const {onAnswer, question, renderPlayer} = this.props;
     const {answers, genre} = question;
     const {answers: userAnswers} = this.state;
 
     const trackList = answers.map((answer, i) => (
       <div key={`${i}-${answer.src}`} className="track">
-        <button className="track__button track__button--play" type="button"></button>
-        <div className="track__status">
-          <audio src={answer.src}></audio>
-        </div>
+        {renderPlayer(answer.src, i)}
         <div className="game__answer">
           <input className="game__input visually-hidden" type="checkbox" name="answer"
             value={`answer-${i}`}
@@ -75,6 +72,6 @@ class GenreQuestionScreen extends React.PureComponent {
   }
 }
 
-GenreQuestionScreen.propTypes = GENRE_QUESTION_TYPE;
+GenreQuestionScreen.propTypes = GENRE_QUESTION_SCREEN_TYPE;
 
 export default GenreQuestionScreen;
