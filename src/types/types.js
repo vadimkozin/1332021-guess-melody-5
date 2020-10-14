@@ -20,26 +20,10 @@ export const ARTIST_QUESTION_TYPE = shape({
   type: QUESTION_TYPE,
 }).isRequired;
 
-
 export const ARTIST_QUESTION_SCREEN_TYPE = {
   onAnswer: func.isRequired,
   question: ARTIST_QUESTION_TYPE,
 };
-
-// export const ARTIST_QUESTION_TYPE = {
-//   onAnswer: func.isRequired,
-//   question: shape({
-//     answers: arrayOf(shape({
-//       artist: string.isRequired,
-//       picture: string.isRequired,
-//     })).isRequired,
-//     song: shape({
-//       artist: string.isRequired,
-//       src: string.isRequired,
-//     }).isRequired,
-//     type: QUESTION_TYPE,
-//   }).isRequired,
-// };
 
 export const GENRE_QUESTION_TYPE = shape({
   answers: arrayOf(shape({
@@ -54,18 +38,6 @@ export const GENRE_QUESTION_SCREEN_TYPE = {
   onAnswer: func.isRequired,
   question: GENRE_QUESTION_TYPE,
 };
-
-// export const GENRE_QUESTION_TYPE = {
-//   onAnswer: func.isRequired,
-//   question: shape({
-//     answers: arrayOf(shape({
-//       src: string.isRequired,
-//       genre: string.isRequired,
-//     })).isRequired,
-//     genre: string.isRequired,
-//     type: QUESTION_TYPE,
-//   }).isRequired,
-// };
 
 export const APP_TYPE = {
   errorsCount: number.isRequired,
