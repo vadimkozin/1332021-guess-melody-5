@@ -1,4 +1,4 @@
-import {shape, func, number, string, array, oneOf, oneOfType, arrayOf, bool} from 'prop-types';
+import {shape, func, number, string, array, oneOf, oneOfType, arrayOf, bool, element} from 'prop-types';
 import {GameType} from '../const';
 
 const QUESTION_TYPE = oneOf([GameType.ARTIST, GameType.GENRE]).isRequired;
@@ -23,6 +23,8 @@ export const ARTIST_QUESTION_TYPE = shape({
 export const ARTIST_QUESTION_SCREEN_TYPE = {
   onAnswer: func.isRequired,
   question: ARTIST_QUESTION_TYPE,
+  renderPlayer: func.isRequired,
+  children: element.isRequired,
 };
 
 export const GENRE_QUESTION_TYPE = shape({
@@ -37,6 +39,8 @@ export const GENRE_QUESTION_TYPE = shape({
 export const GENRE_QUESTION_SCREEN_TYPE = {
   onAnswer: func.isRequired,
   question: GENRE_QUESTION_TYPE,
+  renderPlayer: func.isRequired,
+  children: element.isRequired,
 };
 
 export const APP_TYPE = {
