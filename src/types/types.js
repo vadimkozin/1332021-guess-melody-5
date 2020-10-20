@@ -53,6 +53,7 @@ export const GAME_SCREEN_TYPE = {
   step: number.isRequired,
   resetGame: func.isRequired,
   onUserAnswer: func.isRequired,
+  mistakes: number.isRequired,
 };
 
 export const AUDIO_PLAYER_TYPE = {
