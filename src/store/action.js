@@ -1,3 +1,5 @@
+import {STEP_DEFAULT} from '../const';
+
 export const ActionType = {
   INCREMENT_MISTAKES: `INCREMENT_MISTAKES`,
   INCREMENT_STEP: `INCREMENT_STEP`,
@@ -7,7 +9,7 @@ export const ActionType = {
 export const ActionCreator = {
   incrementStep: () => ({
     type: ActionType.INCREMENT_STEP,
-    payload: 1,
+    payload: STEP_DEFAULT,
   }),
   resetGame: () => ({
     type: ActionType.RESET_GAME,

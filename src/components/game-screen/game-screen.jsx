@@ -1,13 +1,13 @@
-import React from "react";
+import React from 'react';
 import {Redirect} from 'react-router-dom';
-import {connect} from "react-redux";
-import {ActionCreator} from "../../store/action";
+import {connect} from 'react-redux';
+import {ActionCreator} from '../../store/action';
 import {GameType} from '../../const';
 import ArtistQuestionScreen from '../artist-question-screen/artist-question-screen';
 import GenreQuestionScreen from '../genre-question-screen/genre-question-screen';
 import {GAME_SCREEN_TYPE} from '../../types/types';
 
-import withAudioPlayer from "../../hocs/with-audio-player/with-audio-player";
+import withAudioPlayer from '../../hocs/with-audio-player/with-audio-player';
 
 const GenreQuestionScreenWrapped = withAudioPlayer(GenreQuestionScreen);
 const ArtistQuestionScreenWrapped = withAudioPlayer(ArtistQuestionScreen);

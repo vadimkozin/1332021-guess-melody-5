@@ -56,3 +56,7 @@ export const AUDIO_PLAYER_TYPE = {
   src: string.isRequired,
   onPlayButtonClick: func.isRequired,
 };
+
+export const MISTAKES_TYPE = {
+  count: number.isRequired,
+};
