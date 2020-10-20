@@ -46,6 +46,9 @@ export const APP_TYPE = {
 
 export const GAME_SCREEN_TYPE = {
   questions: array.isRequired,
+  step: number.isRequired,
+  resetGame: func.isRequired,
+  onUserAnswer: func.isRequired,
 };
 
 export const AUDIO_PLAYER_TYPE = {
