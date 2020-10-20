@@ -9,3 +9,9 @@ export const Player = {
 };
 
 export const MAX_MISTAKE_COUNT = 3;
+
+export const Increment = {
+  STEP: 1,
+  MISTAKES_ANSWER_TRUTH: 0,
+  MISTAKES_ANSWER_ERROR: 1,
+};
