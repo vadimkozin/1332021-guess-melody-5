@@ -8,5 +8,4 @@ export const Player = {
   EMPTY_ID: -1,
 };
 
-export const STEP_DEFAULT = 1;
-
+export const MAX_MISTAKE_COUNT = 3;
