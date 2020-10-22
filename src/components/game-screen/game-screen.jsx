@@ -25,28 +25,14 @@ const GameScreen = (props) => {
     );
   }
 
-  switch (question.type) {
-    case GameType.ARTIST:
-      return (
-        <ArtistQuestionScreenWrapped
-          question={question}
-          onAnswer={onUserAnswer}
-        >
-          <Mistakes count={mistakes}/>
-        </ArtistQuestionScreenWrapped>
-      );
-    case GameType.GENRE:
-      return (
-        <GenreQuestionScreenWrapped
-          question={question}
-          onAnswer={onUserAnswer}
-        >
-          <Mistakes count={mistakes}/>
-        </GenreQuestionScreenWrapped>
-      );
-  }
+  const Wrapper = question.type === GameType.ARTIST
+    ? ArtistQuestionScreenWrapped
+    : GenreQuestionScreenWrapped;
 
-  return <Redirect to="/" />;
+  return (
+    <Wrapper question={question} onAnswer={onUserAnswer}>
+      <Mistakes count={mistakes}/>
+    </Wrapper>);
 };
 
 GameScreen.propTypes = GAME_SCREEN_TYPE;

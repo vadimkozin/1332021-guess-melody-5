@@ -16,20 +16,20 @@ export const ActionCreator = {
     type: ActionType.RESET_GAME,
   }),
   incrementMistake: (question, userAnswer) => {
-    let answerIsCorrect = false;
+    let isAnswerCorrect = false;
 
     switch (question.type) {
       case GameType.ARTIST:
-        answerIsCorrect = isArtistAnswerCorrect(question, userAnswer);
+        isAnswerCorrect = isArtistAnswerCorrect(question, userAnswer);
         break;
       case GameType.GENRE:
-        answerIsCorrect = isGenreAnswerCorrect(question, userAnswer);
+        isAnswerCorrect = isGenreAnswerCorrect(question, userAnswer);
         break;
     }
 
     return {
       type: ActionType.INCREMENT_MISTAKES,
-      payload: answerIsCorrect ? Increment.MISTAKES_ANSWER_TRUTH : Increment.MISTAKES_ANSWER_ERROR,
+      payload: isAnswerCorrect ? Increment.MISTAKES_ANSWER_TRUTH : Increment.MISTAKES_ANSWER_ERROR,
     };
   },
 };
