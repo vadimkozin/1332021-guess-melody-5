@@ -6,11 +6,9 @@ import WinScreen from '../win-screen/win-screen';
 import WelcomeScreen from '../welcome-screen/welcome-screen';
 import NotFound from '../not-found/not-found';
 import GameScreen from "../game-screen/game-screen";
-import {APP_TYPE} from '../../types/types';
+import {MAX_MISTAKE_COUNT} from "../../const";
 
-const App = (props) => {
-  const {errorsCount, questions} = props;
-
+const App = () => {
   return (
     <BrowserRouter>
       <Switch>
@@ -18,14 +16,13 @@ const App = (props) => {
           render={({history}) => (
             <WelcomeScreen
               onPlayButtonClick={() => history.push(`/game`)}
-              errorsCount={errorsCount}
+              errorsCount={MAX_MISTAKE_COUNT}
             />
           )}
         />
         <Route exact path="/game">
           <GameScreen
-            errorsCount={errorsCount}
-            questions={questions}
+            errorsCount={MAX_MISTAKE_COUNT}
           />
         </Route>
         <Route exact path='/login' component={AuthScreen} />
@@ -37,6 +34,6 @@ const App = (props) => {
   );
 };
 
-App.propTypes = APP_TYPE;
+App.propTypes = {};
 
 export default App;
