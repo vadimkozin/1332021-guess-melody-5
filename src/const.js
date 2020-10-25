@@ -3,7 +3,7 @@ export const GameType = {
   GENRE: `genre`,
 };
 
-export const Player = {
+export const PlayerSettings = {
   DEFAULT_ID: 0,
   EMPTY_ID: -1,
 };

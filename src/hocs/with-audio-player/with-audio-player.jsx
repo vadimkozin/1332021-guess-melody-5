@@ -1,6 +1,10 @@
 import React, {PureComponent} from 'react';
-import AudioPlayer from "../../components/audio-player/audio-player";
-import {Player} from '../../const';
+import Player from "../../components/audio-player/audio-player";
+import withAudio from "../with-audio/with-audio";
+
+const AudioPlayer = withAudio(Player);
+import {PlayerSettings} from '../../const';
+
 
 const withAudioPlayer = (Component) => {
   class WithAudioPlayer extends PureComponent {
@@ -23,7 +27,7 @@ const withAudioPlayer = (Component) => {
               src={src}
               isPlaying={id === activePlayerId}
               onPlayButtonClick={() => this.setState({
-                activePlayerId: activePlayerId === id ? Player.EMPTY_ID : id
+                activePlayerId: activePlayerId === id ? PlayerSettings.EMPTY_ID : id
               })}
             />
           );
