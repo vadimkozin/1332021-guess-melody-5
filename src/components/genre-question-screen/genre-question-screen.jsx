@@ -1,4 +1,5 @@
 import React from 'react';
+import GenreQuestionItem from "../genre-question-item/genre-question-item";
 import {GENRE_QUESTION_SCREEN_TYPE} from '../../types/types';
 
 const GenreQuestionScreen = (props) => {
@@ -14,21 +15,14 @@ const GenreQuestionScreen = (props) => {
   const {answers, genre} = question;
 
   const trackList = answers.map((answer, i) => (
-    <div key={`${i}-${answer.src}`} className="track">
-      {renderPlayer(answer.src, i)}
-      <div className="game__answer">
-        <input className="game__input visually-hidden" type="checkbox" name="answer"
-          value={`answer-${i}`}
-          id={`answer-${i}`}
-          checked={userAnswers[i]}
-          onChange={(evt) => {
-            const value = evt.target.checked;
-            onChange(i, value);
-          }}
-        />
-        <label className="game__check" htmlFor={`answer-${i}`}>Отметить</label>
-      </div>
-    </div>
+    <GenreQuestionItem
+      answer={answer}
+      id={i}
+      key={`${i}-${answer.src}`}
+      onChange={onChange}
+      renderPlayer={renderPlayer}
+      userAnswer={userAnswers[i]}
+    />
   ));
 
   return (

@@ -84,3 +84,15 @@ export const WITH_USER_ANSWER = {
   }).isRequired,
   onAnswer: func.isRequired,
 };
+
+
+export const GENRE_QUESTION_ITEM = {
+  answer: shape({
+    src: string.isRequired,
+    genre: string.isRequired,
+  }).isRequired,
+  id: number.isRequired,
+  onChange: func.isRequired,
+  renderPlayer: func.isRequired,
+  userAnswer: bool.isRequired,
+};
