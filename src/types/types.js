@@ -38,9 +38,11 @@ export const GENRE_QUESTION_TYPE = shape({
 
 export const GENRE_QUESTION_SCREEN_TYPE = {
   onAnswer: func.isRequired,
+  onChange: func.isRequired,
   question: GENRE_QUESTION_TYPE,
   renderPlayer: func.isRequired,
   children: element.isRequired,
+  userAnswers: arrayOf(bool).isRequired,
 };
 
 export const GAME_SCREEN_TYPE = {
