@@ -70,3 +70,15 @@ export const WITH_AUDIO_TYPE = {
   onPlayButtonClick: func.isRequired,
   src: string.isRequired,
 };
+
+export const WITH_USER_ANSWER = {
+  question: shape({
+    answers: arrayOf(shape({
+      src: string.isRequired,
+      genre: string.isRequired,
+    })).isRequired,
+    genre: string.isRequired,
+    type: oneOf([GameType.GENRE]).isRequired,
+  }).isRequired,
+  onAnswer: func.isRequired,
+};
