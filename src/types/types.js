@@ -96,3 +96,16 @@ export const GENRE_QUESTION_ITEM = {
   renderPlayer: func.isRequired,
   userAnswer: bool.isRequired,
 };
+
+export const GAME_OVER_SCREEN_TYPE = {
+  onReplayButtonClick: func.isRequired,
+  resetGame: func.isRequired,
+};
+
+export const WIN_SCREEN_TYPE = {
+  questionsCount: number.isRequired,
+  mistakesCount: number.isRequired,
+  onReplayButtonClick: func.isRequired,
+  resetGame: func.isRequired,
+};
+
