@@ -1,4 +1,4 @@
-import {shape, func, number, string, oneOf, oneOfType, arrayOf, bool, element} from 'prop-types';
+import {shape, func, number, string, oneOf, oneOfType, arrayOf, bool, element, node} from 'prop-types';
 import {GameType} from '../const';
 
 const QUESTION_TYPE = oneOf([GameType.ARTIST, GameType.GENRE]).isRequired;
@@ -52,8 +52,12 @@ export const GAME_SCREEN_TYPE = {
 };
 
 export const AUDIO_PLAYER_TYPE = {
+  children: oneOfType([
+    arrayOf(node),
+    node
+  ]).isRequired,
+  isLoading: bool.isRequired,
   isPlaying: bool.isRequired,
-  src: string.isRequired,
   onPlayButtonClick: func.isRequired,
 };
 
