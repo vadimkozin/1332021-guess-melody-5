@@ -60,3 +60,9 @@ export const AUDIO_PLAYER_TYPE = {
 export const MISTAKES_TYPE = {
   count: number.isRequired,
 };
+
+export const WITH_AUDIO_TYPE = {
+  isPlaying: bool.isRequired,
+  onPlayButtonClick: func.isRequired,
+  src: string.isRequired,
+};
