@@ -26,8 +26,25 @@ const App = () => {
           />
         </Route>
         <Route exact path='/login' component={AuthScreen} />
-        <Route exact path='/result' component={WinScreen} />
-        <Route exact path='/lose' component={GameOverScreen} />
+        {/* <Route exact path='/result' component={WinScreen} /> */}
+        {/* <Route exact path='/lose' component={GameOverScreen} /> */}
+        <Route exact
+          path="/result"
+          render={({history}) => (
+            <WinScreen
+              onReplayButtonClick={() => history.push(`/game`)}
+            />
+          )}
+        />
+        <Route exact
+          path="/lose"
+          render={({history}) => (
+            <GameOverScreen
+              onReplayButtonClick={() => history.push(`/game`)}
+            />
+          )}
+        />
+
         <Route component={NotFound} />
       </Switch>
     </BrowserRouter>
