@@ -48,7 +48,6 @@ export const GENRE_QUESTION_SCREEN_TYPE = {
 export const GAME_SCREEN_TYPE = {
   questions: arrayOf(oneOfType([ARTIST_QUESTION_TYPE, GENRE_QUESTION_TYPE]).isRequired),
   step: number.isRequired,
-  resetGame: func.isRequired,
   onUserAnswer: func.isRequired,
   mistakes: number.isRequired,
 };

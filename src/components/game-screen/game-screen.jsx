@@ -2,7 +2,7 @@ import React from 'react';
 import {Redirect} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {ActionCreator} from '../../store/action';
-import {GameType} from '../../const';
+import {GameType, MAX_MISTAKE_COUNT} from '../../const';
 import ArtistQuestionScreen from '../artist-question-screen/artist-question-screen';
 import GenreQuestionScreen from '../genre-question-screen/genre-question-screen';
 import Mistakes from "../mistakes/mistakes";
@@ -15,25 +15,43 @@ const GenreQuestionScreenWrapped = withAudioPlayer(withUserAnswer(GenreQuestionS
 const ArtistQuestionScreenWrapped = withAudioPlayer(ArtistQuestionScreen);
 
 const GameScreen = (props) => {
-  const {questions, step, onUserAnswer, resetGame, mistakes} = props;
+  const {questions, step, onUserAnswer, mistakes} = props;
   const question = questions[step];
 
-  if (step >= questions.length || !question) {
-    resetGame();
-
+  if (mistakes >= MAX_MISTAKE_COUNT) {
     return (
-      <Redirect to="/" />
+      <Redirect to="/lose" />
     );
   }
 
-  const Wrapper = question.type === GameType.ARTIST
-    ? ArtistQuestionScreenWrapped
-    : GenreQuestionScreenWrapped;
+  if (step >= questions.length || !question) {
+    return (
+      <Redirect to="/result" />
+    );
+  }
 
-  return (
-    <Wrapper question={question} onAnswer={onUserAnswer}>
-      <Mistakes count={mistakes}/>
-    </Wrapper>);
+  switch (question.type) {
+    case GameType.ARTIST:
+      return (
+        <ArtistQuestionScreenWrapped
+          question={question}
+          onAnswer={onUserAnswer}
+        >
+          <Mistakes count={mistakes}/>
+        </ArtistQuestionScreenWrapped>
+      );
+    case GameType.GENRE:
+      return (
+        <GenreQuestionScreenWrapped
+          question={question}
+          onAnswer={onUserAnswer}
+        >
+          <Mistakes count={mistakes} />
+        </GenreQuestionScreenWrapped>
+      );
+    default:
+      return <Redirect to="/" />;
+  }
 };
 
 GameScreen.propTypes = GAME_SCREEN_TYPE;
